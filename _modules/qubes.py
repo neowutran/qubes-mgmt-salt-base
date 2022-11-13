@@ -47,7 +47,7 @@ def merge(target, source, create=False, allowed=None, append=False):
         allowed = []
 
     for key, value in source.items():
-        if isinstance(value, collections.Mapping):
+        if isinstance(value, collections.abc.Mapping):
             if key in target.keys() or create or key in allowed:
                 replace = merge(
                     target.get(key, {}),
